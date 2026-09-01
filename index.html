@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js" defer></script>
   </head>
   <body class="bg-[#19172E] flex justify-center items-center h-screen">
     <div class="w-[350px] sm:w-[600px] h-[550px] border rounded-[25px] bg-[#252339]">
         <h1 class="font-bold text-center text-white text-3xl pt-[20px]">To do list</h1>
         <div class="flex justify-center items-center py-[15px]">
-            <input class="w-[270px] sm:w-[480px] h-[40px] bg-white rounded-[5px] placeholder:pl-4" type="text" placeholder="Make your list">
-            <button class=" bg-yellow-300 w-[50px] sm:w-[100px] h-[40px] rounded-[5px]">Add</button>
+          
+            <input id="note" class="w-[270px] sm:w-[480px] h-[40px] bg-white rounded-[5px] placeholder:pl-4" type="text" placeholder="Make your list">
+          
+            <button id="btn" type="button" class="hover:bg-green-600 bg-yellow-300 w-[50px] sm:w-[100px] h-[40px] rounded-[5px]">Add</button>
         </div>
+        <div class="text-center mx-[10px] bg-white flex justify-center items center">
+          <div id="output"></div>
+        </div>
+
     </div>
   </body>
 </html>
