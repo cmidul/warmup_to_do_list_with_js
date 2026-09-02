@@ -1,8 +1,12 @@
-const note = document.getElementById("note");
-const btn = document.getElementById("btn");
-const output = document.getElementById("output");
+const input = document.querySelector("#note")
+const submit = document.querySelector("#btn")
 
-btn.addEventListener("click", function fun1() {
-    console.log(note.value);
-  output.innerHTML = note.value;
-});
+
+submit.addEventListener('click', function(){
+  const msg = document.createElement("div")
+  msg.textContent = input.value
+  input.value = ""
+  const card = document.querySelector("#output")
+  card.append(msg);
+  console.log(msg)
+})
