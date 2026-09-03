@@ -35,7 +35,7 @@ submit.addEventListener('click', function(){
 input.addEventListener("keydown", function (e) {
   if(e.code === "Enter"){
     const msg = document.createElement("div");
-    msg.innerHTML = `<div class="msg-card flex flex-col justify-center gap-y-[10px] items-center border">
+    msg.innerHTML = `<div class="msg-card flex flex-col justify-center gap-y-[10px] items-center border bg-white">
                       ${input.value}
                         <div class="flex justify-center items-center py-5 gap-[10px]">
                           <button class="dlt size-[20px] hover:bg-red-400 bg-red-600"></button>
