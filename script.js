@@ -1,15 +1,22 @@
 const input = document.querySelector("#note")
 const submit = document.querySelector("#btn")
+const today = new Date();
+const formattedDate = today.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 
 
 
 submit.addEventListener('click', function(){
   const msg = document.createElement("div")
-  msg.innerHTML = `<div class="msg-card flex flex-col justify-center gap-y-[10px] items-center border">
+  msg.innerHTML = `<div class="msg-card flex flex-col justify-center gap-y-[10px] items-center text-center border">
                     <span class="note-text">${input.value}</span>
-                      <div class="flex justify-center items-center py-5 gap-[10px]">
+                      <div class="flex justify-center items-center py-2 gap-[10px]">
                         <button class="dlt w-[60px] h-[20px] rounded-md hover:bg-red-400 bg-red-600 text-[12px] text-white font-semibold">Remove</button>
                         <button class="edit w-[60px] h-[20px] rounded-md hover:bg-green-400 bg-green-600 text-[12px] text-white font-semibold">Edit</button>
+                        <span class="block date-text text-[10px]">${formattedDate}</span>
                       </div>
                   </div>`;
 
@@ -24,9 +31,11 @@ submit.addEventListener('click', function(){
   edit.addEventListener("click", function(e){
     e.stopPropagation();
     let newtext = msg.querySelector(".note-text");
+    let date = msg.querySelector(".date-text")
     input.value = newtext.textContent.trim();
     submit.addEventListener("click", function(){
       msg.textContent = input.value;
+      date.textContent = formattedDate;
     })
   });
 
